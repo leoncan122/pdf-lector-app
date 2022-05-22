@@ -41,10 +41,20 @@
   }
 }
 
+header {
+    height:30vh;
+    color: #677a63;
+    text-align: center;
+    line-height: 30vh;
+}
+main {
+    height: 67vh;
+}
+
 .container-input {
     text-align: center;
     background: #282828;
-    border-top: 5px solid #c39f77;
+    border-top: 5px solid #677a63;
     padding: 50px 0;
     border-radius: 6px;
     width: 50%;
