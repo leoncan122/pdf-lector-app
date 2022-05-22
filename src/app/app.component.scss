@@ -1,3 +1,7 @@
+@import '../styles.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
 :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 14px;
@@ -27,39 +31,43 @@
 
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
-    .card-container > *:not(.circle-link) ,
-    .terminal {
-      width: 100%;
-    }
+    
 
    
   @media screen and (max-width: 575px) {
-    svg#rocket-smoke {
-      display: none;
-      visibility: hidden;
+    .container-input {
+        width: 90%;
     }
   }
 }
 
 header {
-    height:30vh;
-    color: #677a63;
+    height:15vh;
+    color: #0f193b;
     text-align: center;
-    line-height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    font-family: 'Koulen', cursive;
+    background-color: $ligthgrey-color;
 }
 main {
-    height: 67vh;
+    background-color: $lightblue-color;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container-input {
     text-align: center;
     background: #282828;
-    border-top: 5px solid #677a63;
+    border-top: 8px solid #a39d9d;
     padding: 50px 0;
     border-radius: 6px;
-    width: 50%;
-    margin: 0 auto;
-    margin-bottom: 20px;
+    width: 40%;
+    box-shadow: 1px 3px 9px 3px;
 }
 
 .inputfile {
@@ -100,19 +108,19 @@ main {
 
 
 .inputfile-6 + label {
-    color: #c39f77;
+    color: #b44848;
 }
 
 .inputfile-6:focus + label,
 .inputfile-6.has-focus + label,
 .inputfile-6 + label:hover {
-    color: #9f8465;
+    color: #b44848;
 }
 
 .inputfile-6 + label figure {
     width: 100px;
     height: 135px;
-    background-color: #c39f77;
+    background-color: #9f2323;
     display: block;
     position: relative;
     padding: 30px;
@@ -122,7 +130,7 @@ main {
 .inputfile-6:focus + label figure,
 .inputfile-6.has-focus + label figure,
 .inputfile-6 + label:hover figure {
-    background-color: #9f8465;
+    background-color: #b44848;
 }
 
 .inputfile-6 + label figure::before,
@@ -155,4 +163,30 @@ main {
     width: 100%;
     height: 100%;
     fill: #fff;
+}
+.file-result-container {
+    text-align: center;
+    width: 100%;
+    height: 15vh;
+    background-color: $ligthgrey-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: 'Koulen', cursive;
+
+}
+
+.file-action {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: 'Koulen', cursive;
+}
+.file-action:hover {
+    cursor: pointer;
+    color: $lightblue-color;
 }
