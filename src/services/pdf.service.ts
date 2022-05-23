@@ -1,18 +1,25 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http'
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PdfService {
-  private url: string = 'http://localhost:3000/api/pdf'
+  private url: string = 'http://localhost:3000/convert';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  extractPdf (form: FormData): Observable<any> {
-    const headers = new HttpHeaders({'Content-Type': 'multipart/form-data'});
-    
-    return this.http.post(this.url, form, {headers: headers})
+  extractPdf(form: FormData): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'content-disposition' });
+
+    let getfileheaders = new HttpHeaders().set(
+      'Accept',
+      'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+    );
+
+    return this.http.get(this.url, {
+      responseType: 'blob',
+    });
   }
 }
